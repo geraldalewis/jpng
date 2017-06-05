@@ -1,0 +1,8 @@
+{
+  "name": "jpng",
+  "version": "1.0.0",
+  "description": "Compress your PNG files by converting them to JPGs",
+  "main": "lib/index.js",
+  "author": "geraldalewis <gerald.a.lewis@gmail.com>",
+  "license": "MIT"
+}
