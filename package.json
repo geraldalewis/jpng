@@ -2,7 +2,25 @@
   "name": "jpng",
   "version": "1.0.0",
   "description": "Compress your PNG files by converting them to JPGs",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
   "author": "geraldalewis <gerald.a.lewis@gmail.com>",
-  "license": "MIT"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/geraldalewis/jpng.git"
+  },
+  "bugs": {
+    "url": "https://github.com/geraldalewis/jpng/issues"
+  },
+  "homepage": "https://github.com/geraldalewis/jpng",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint lib/*.js",
+    "test": "yarn run lint",
+    "build": "rollup -c"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "rollup": "^0.42.0",
+    "rollup-plugin-uglify": "^2.0.1"
+  }
 }
