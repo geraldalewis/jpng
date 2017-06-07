@@ -1,10 +1,14 @@
 {
   "name": "jpng",
   "version": "0.1.0",
-  "description": "Compress PNG files by converting them to JPGs",
+  "description": "A utilty for combining jpng files back into PNGs",
   "main": "dist/jpng.js",
   "module": "lib/jpng.js",
   "author": "geraldalewis <gerald.a.lewis@gmail.com>",
+  "files": [
+    "lib",
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/geraldalewis/jpng.git"
