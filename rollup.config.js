@@ -5,7 +5,7 @@ let pkg = require('./package.json');
 export default {
   entry: 'lib/jpng.js',
   dest: pkg.main,
-  format: 'umd',
+  format: 'iife',
   moduleName: 'jpng',
   plugins: [uglify()]
 };
