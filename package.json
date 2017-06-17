@@ -1,6 +1,6 @@
 {
   "name": "jpng",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A utilty for combining jpng files back into PNGs",
   "main": "dist/jpng.js",
   "module": "lib/jpng.js",
