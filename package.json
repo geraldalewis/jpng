@@ -5,6 +5,9 @@
   "main": "dist/jpng.js",
   "module": "lib/jpng.js",
   "author": "geraldalewis <gerald.a.lewis@gmail.com>",
+  "directories": {
+    "lib": "lib"
+  },
   "files": [
     "lib",
     "dist"
@@ -26,6 +29,7 @@
   "devDependencies": {
     "eslint": "^3.19.0",
     "rollup": "^0.42.0",
-    "rollup-plugin-uglify": "^2.0.1"
+    "rollup-plugin-uglify": "^2.0.1",
+    "uglify-es": "^3.0.19"
   }
 }
