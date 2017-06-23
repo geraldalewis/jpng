@@ -1,5 +1,5 @@
+import buble from 'rollup-plugin-buble';
 import uglify from 'rollup-plugin-uglify';
-import { minify } from 'uglify-es';
 
 let pkg = require('./package.json');
 
@@ -8,5 +8,5 @@ export default {
   dest: pkg.main,
   format: 'iife',
   moduleName: 'jpng',
-  plugins: [uglify({}, minify)]
+  plugins: [buble(), uglify()]
 };
