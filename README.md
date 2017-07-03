@@ -1,6 +1,6 @@
 # jpng
 
-`jpng` can reduce the size of some PNG files by 70-90%. It works by converting transparency data to a greyscale matte and then applying JPG compression. This library converts the JPG back into a PNG for display on a webpage. [To create a jpng, visit the webapp](http://geraldalewis.com/jpng/).
+`jpng` can reduce the size of some PNG files by 70-90%. It works by converting transparency data to a greyscale matte and then applying JPG compression. This library converts the JPG back into a PNG for display on a webpage. [To create a jpng, use the webapp](http://geraldalewis.com/jpng/).
 
 To let the library automatically convert `<img>` elements, [see the jpng-auto section](#jpng-auto). e.g.,
 ```html
@@ -101,12 +101,12 @@ It can be used sans-framework, of course:
   });
 ```
 
-####jpng params####
+#### jpng params
 `src`: `String` **required**; src for jpng file.
 `width` and `height`: `uint` **required**; dimensions of the *original* PNG.
 `callback`: `(record:Object) => void` *optional*; a callback invoked with the jpng record after an error occurs or processing has finished.
 
-####jpng return####
+#### jpng return
 A record object is returned for scenarios where your environment supports observing vanilla JS objects (like Vue).
 
 ```javascript
