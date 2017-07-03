@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>jpng tests</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script async src="../dist/jpng.iife.js"></script>
+    <style>
+      .bg-transparent {
+        background-color: #fff;
+        background-size: 20px 20px;
+        background-position: 0 0, 10px 10px;
+        background-image: 
+          linear-gradient(45deg, #f0f0f0 25%, transparent 25%, transparent 75%, #f0f0f0 75%, #f0f0f0), 
+          linear-gradient(45deg, #f0f0f0 25%, transparent 25%, transparent 75%, #f0f0f0 75%, #f0f0f0);
+      }
+      .bg-dark-transparent {
+        background-color: #333;
+        background-size: 20px 20px;
+        background-position: 0 0, 10px 10px;
+        background-image: 
+          linear-gradient(45deg, #444 25%, transparent 25%, transparent 75%, #444 75%, #444), 
+          linear-gradient(45deg, #444 25%, transparent 25%, transparent 75%, #444 75%, #444);
+      }
+      img[data-jpng="loading"], img[data-jpng-auto="true"] {
+        visibility: hidden;
+      }
+      img[data-jpng="error"] {
+        background: rgb(255,0,0);
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <figure id='car-jpng'>
+        <figcaption>A car, behind which the transparent-squares background can be seen.</figcaption>
+      </figure>
+      <figure id='not-found'>
+        <figcaption>The src image was not found; the img displays as a 100x100 red square.</figcaption>
+      </figure>
+    </section>
+    <script src="../dist/jpng.iife.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>jpng tests</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script async src="../dist/jpng-auto.iife.js"></script>
+    <style>
+      .bg-transparent {
+        background-color: #fff;
+        background-size: 20px 20px;
+        background-position: 0 0, 10px 10px;
+        background-image: 
+          linear-gradient(45deg, #f0f0f0 25%, transparent 25%, transparent 75%, #f0f0f0 75%, #f0f0f0), 
+          linear-gradient(45deg, #f0f0f0 25%, transparent 25%, transparent 75%, #f0f0f0 75%, #f0f0f0);
+      }
+      .bg-dark-transparent {
+        background-color: #333;
+        background-size: 20px 20px;
+        background-position: 0 0, 10px 10px;
+        background-image: 
+          linear-gradient(45deg, #444 25%, transparent 25%, transparent 75%, #444 75%, #444), 
+          linear-gradient(45deg, #444 25%, transparent 25%, transparent 75%, #444 75%, #444);
+      }
+      img[data-jpng="loading"], img[data-jpng-auto="true"] {
+        visibility: hidden;
+      }
+      img[data-jpng="error"] {
+        background: rgb(255,0,0);
+      }
+    </style>
+  </head>
+  <body>
+    <p>Check Network tab and ensure each dataURL appears only once.</p>
+    <section id="figures">
+      <figure>
+        <img
+          onload="typeof jpng !== 'undefined' && jpng.resetSrc(this, 536, 224)"
+          src="car-jpng.jpg" 
+          width="536"
+          height="224"
+          class="bg-transparent"
+          data-jpng="loading"
+          data-jpng-auto="true"
+        >
+        <figcaption>A car, behind which the transparent-squares background can be seen.</figcaption>
+      </figure>
+      <figure>
+        <img
+          onload="typeof jpng !== 'undefined' && jpng.resetSrc(this, 100, 100)"
+          src="does-not-exist-jpng.jpg" 
+          width="100"
+          height="100"
+          class="bg-transparent"
+          data-jpng="loading"
+          data-jpng-auto="true"
+        >
+        <figcaption>The src image was not found; the img displays as a 100x100 red square.</figcaption>
+      </figure>
+    </section>
+    <script>
+      function testDynamic(){
+        const tmpl = `
+        <figure>
+          <img
+            onload="jpng.resetSrc(this, 500, 204)"
+            src="cloud-500px-jpng.jpg" 
+            width="500"
+            height="204"
+            class="bg-dark-transparent"
+            data-jpng="loading"
+            data-jpng-auto="true"
+          >
+          <figcaption>A cloud on a dark transparent background; added after dom complete</figcaption>
+        </figure>`;
+        const fig = document.createElement('figure');
+        fig.innerHTML = tmpl
+        document.getElementById('figures').appendChild(fig);
+      }
+      function oncomplete(){
+        if (document.readyState !== 'complete') return;
+        document.addEventListener('readystatechange', oncomplete);
+        setTimeout( testDynamic, 100 );
+      }
+      if (document.readyState !== 'complete') {
+        document.addEventListener('readystatechange', oncomplete);
+      } else oncomplete();
+    </script>
+  </body>
+</html>

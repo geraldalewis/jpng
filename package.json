@@ -2,15 +2,12 @@
   "name": "jpng",
   "version": "0.4.0",
   "description": "A utilty for combining jpng files back into PNGs",
-  "main": "dist/jpng.js",
-  "module": "lib/jpng.js",
+  "main": "dist/jpng.iife.js",
+  "module": "dist/jpng.js",
   "author": "geraldalewis <gerald.a.lewis@gmail.com>",
-  "directories": {
-    "lib": "lib"
-  },
   "files": [
-    "lib",
-    "dist"
+    "dist",
+    "auto.js"
   ],
   "repository": {
     "type": "git",
@@ -24,13 +21,12 @@
   "scripts": {
     "lint": "eslint lib/*.js",
     "test": "yarn run lint",
-    "build": "rollup -c"
+    "build": "node build.js"
   },
   "devDependencies": {
-    "eslint": "^3.19.0",
+    "eslint": "^4.1.1",
     "rollup": "^0.42.0",
     "rollup-plugin-buble": "^0.15.0",
-    "rollup-plugin-uglify": "^2.0.1",
-    "uglify-es": "^3.0.19"
+    "rollup-plugin-uglify": "^2.0.1"
   }
 }
